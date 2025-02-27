@@ -1,13 +1,12 @@
 
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import prisma from "../db";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import axios from  "axios"
  
 export const authOptions = {
-  adapter: PrismaAdapter(prisma as PrismaClient),
+
   session: {
     strategy: "jwt",
   },

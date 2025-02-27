@@ -49,7 +49,7 @@ export const utils = [
 export const products = [
 
     {id:1,category:"Anamneses",title:"Contrato de Laser Lavieen",price:129,status:"AVAILABLE",images:["/Assets/am.png","/Assets/am1.png"]},
-    {id:2,category:"Documentos Legais",title:"Contrato de Laser Lavieen",price:129,status:"AVAILABLE",images:["/Assets/tcl1.png","/Assets/tcle.png"]},
+    {id:2,category:"Documentos Legais",title:"CONTRATO ACIDO HIALURONICO",price:129,status:"AVAILABLE",images:["/Assets/tc1.png","/Assets/tc2.png","/Assets/tc3.png","/Assets/tc4.png","/Assets/tc5.png"]},
     {id:3,category:"Fichas Clínicas",title:"Contrato de Laser Lavieen",price:129,status:"AVAILABLE",images:["/Assets/am.png","/Assets/am1.png"]},
     {id:4,category:"Termos de Consentimento",title:"TCLE ACIDO HIALURONICO",price:129,status:"AVAILABLE" ,images:["/Assets/tcl1.png","/Assets/tcle.png"]},
     {id:5,category:"Documentos Personalizados",title:"Contrato de Laser Lavieen",price:129,status:"AVAILABLE",images:["/Assets/am.png","/Assets/am1.png"]},
