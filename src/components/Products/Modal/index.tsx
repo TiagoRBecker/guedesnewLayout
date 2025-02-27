@@ -61,17 +61,22 @@ const ModalProduct = ({ isOpen, onClose, product }: Modal) => {
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-2 w-full h-full gap-4">
-                <div className="w-full h-full">
+              <div className="flex justify-center items-center w-full h-[600px] gap-4">
+                <div className="w-[50%] flex items-center justify-center ">
                   <Carrousel>
                     {product.images?.map((img: string, index: number) => (
                       <div className="w-full h-full" key={index}>
-                        <img src={img} alt="Carrousel" className="w-full" />
+                        <img
+                          src={img}
+                          alt="Carrousel"
+                          className="w-full h-full"
+                        />
                       </div>
                     ))}
                   </Carrousel>
                 </div>
-                <div className="w-full h-full flex flex-col gap-5">
+
+                <div className="w-[50%]  flex flex-col gap-5">
                   <h1 className="text-[#336DFF] uppercase font-bold">
                     {product.title}
                   </h1>
@@ -82,19 +87,20 @@ const ModalProduct = ({ isOpen, onClose, product }: Modal) => {
                     })}
                   </span>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Sed tenetur, consequatur beatae veritatis voluptates
-                    temporibus voluptate ullam obcaecati odit ut placeat
-                    perferendis doloribus tempore quo architecto illo sit eaque
-                    officia Lorem ipsum dolor sit amet consectetur, adipisicing
-                    elit. Sed tenetur, consequatur beatae veritatis voluptates
-                    temporibus voluptate ullam obcaecati odit ut placeat
-                    perferendis doloribus tempore quo architecto illo sit eaque
-                    officia Lorem ipsum dolor sit amet consectetur, adipisicing
-                    elit. Sed tenetur, consequatur beatae veritatis voluptates
-                    temporibus voluptate ullam obcaecati odit ut placeat
-                    perferendis doloribus tempore quo architecto illo sit eaque
-                    officia.
+                    A toxina botulínica é uma substância utilizada para relaxar
+                    temporariamente os músculos, sendo amplamente aplicada em
+                    procedimentos estéticos e terapêuticos. No campo estético,
+                    suaviza rugas e linhas de expressão. Já na medicina, trata
+                    condições como bruxismo, hiperidrose e espasmos musculares.
+                    Seus efeitos são temporários, durando de três a seis meses,
+                    e o procedimento deve ser realizado por profissionais
+                    qualificado. Um contrato de prestação de serviços para
+                    toxina botulínica é essencial para garantir segurança
+                    jurídica tanto ao profissional quanto ao paciente. Ele
+                    define direitos, deveres, contraindicações, riscos e
+                    consentimentos, prevenindo conflitos e resguardando ambas as
+                    partes. Além de ser um respaldo legal, o contrato reforça a
+                    transparência e a confiança no procedimento estético
                   </p>
 
                   <div className="flex items-center justify-center gap-2">

@@ -12,8 +12,11 @@ const Carrousel = ({ children }: Carrousel) => {
     autoplay: true,
     autoplaySpeed: 3000,
     dots: true,
+    arrows: false,
+    centerMode: true,  // Habilita o modo centralizado
+    centerPadding: "0px", // Remove qualquer padding lateral para alinhar no centro
   };
-  return <Slider {...settings}>{children}</Slider>;
+  return <Slider {...settings} className="w-[70%] h-[70%]" >{children}</Slider>;
 };
 
 export default Carrousel;
