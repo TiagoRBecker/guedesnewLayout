@@ -63,15 +63,13 @@ const ModalProduct = ({ isOpen, onClose, product }: Modal) => {
             ) : (
               <div className="grid grid-cols-2 w-full h-full gap-4">
                 <div className="w-full h-full">
-                <Carrousel >
-                  {product.images?.map((img: string, index: number) => (
-                   <div className="w-full h-full" key={index}>
- <img src={img} alt="Carrousel" className="w-full" />
-                   </div>
-                     
-                  
-                  ))}
-                    </Carrousel>
+                  <Carrousel>
+                    {product.images?.map((img: string, index: number) => (
+                      <div className="w-full h-full" key={index}>
+                        <img src={img} alt="Carrousel" className="w-full" />
+                      </div>
+                    ))}
+                  </Carrousel>
                 </div>
                 <div className="w-full h-full flex flex-col gap-5">
                   <h1 className="text-[#336DFF] uppercase font-bold">

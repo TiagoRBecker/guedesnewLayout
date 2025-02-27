@@ -1,8 +1,9 @@
 const WpButton = () => {
-    return ( <div className="fixed bottom-20 left-20">
-        <img src="/Assets/Icons/wp.svg" alt="" />
+  return (
+    <div className="fixed bottom-20 left-20">
+      <img src="/Assets/Icons/wp.svg" alt="" />
+    </div>
+  );
+};
 
-    </div> );
-}
- 
 export default WpButton;

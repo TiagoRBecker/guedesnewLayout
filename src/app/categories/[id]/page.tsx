@@ -1,12 +1,9 @@
 "use client";
 import BannerDescript from "@/components/BannerDescript";
-import DocsEmphasis from "@/components/Docs";
 import Products from "@/components/Products";
 import { Item, useCartStore } from "@/store/cartStore";
-
-import axios from "axios";
 import { useParams } from "next/navigation";
-import React, { use, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 type Categories = {
   id: string;
@@ -21,22 +18,8 @@ const CategoriesPageID = () => {
   useEffect(() => {}, []);
   const addTocart = useCartStore((state) => state.addToCart);
 
-  const getCategories = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3000/categories/${id}`
-      );
-      setCategories(response.data);
 
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
-  useEffect(() => {
-    getCategories();
-  }, []);
   return (
     <section className="w-full flex items-center justify-center  flex-col ">
       <div className="w-full  bg-[#EBEBEB] h-[200px]"></div>
@@ -62,15 +45,3 @@ const CategoriesPageID = () => {
 };
 
 export default CategoriesPageID;
-/*<div className="container mx-auto grid grid-cols-3 xl:grid-cols-4 gap-8 py-24">
-        {categories?.products.map((product, index: number) => (
-          <Products
-            key={index}
-            title={product.title}
-            category={product.category}
-            id={product.id}
-            addCart={() => addTocart(product)}
-          />
-        ))}
-      </div>
-      */

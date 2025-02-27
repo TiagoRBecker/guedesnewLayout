@@ -4,50 +4,19 @@ import { Button, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import axios from "axios";
-import Swal from "sweetalert2";
 const Signup = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const {
     register,
-    handleSubmit,
-    setValue,
-    trigger,
-    watch,
-    getValues,
     formState: { errors },
   } = useForm<SignupData>({
     mode: "all",
     resolver: zodResolver(signup),
   });
-  const onSubmit = handleSubmit(async (data) => {
-    try {
-      const response = await axios.post(
-        `http://localhost:3000/auth/signup`,
-        data
-      );
-      await Swal.fire({
-        title: "Conta criada com sucesso",
-        text: "Deseja fazer Login?",
-        icon: "success",
-      });
-      return response;
-    } catch (error: any) {
-      console.log(error)
-      await Swal.fire({
-        title: "Erro ao criar a conta ",
-        text: `${error.response.data.message}`,
-        icon: "error",
-      });
-    } finally {
-    }
-  });
+
   return (
-    <form
-      className="w-full h-full  flex  flex-col gap-4 mt-10 "
-      onSubmit={onSubmit}
-    >
+    <form className="w-full h-full  flex  flex-col gap-4 mt-10 ">
       <h1 className="uppercase  py-2">Cadastrar</h1>
       <Input
         {...register("name")}

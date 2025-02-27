@@ -4,11 +4,11 @@ import { persist } from "zustand/middleware";
 import data from "../../public/desc.json";
 
 export type Item = {
-  id:string
-  name:string
-  description:string
+  id:number
+  title:string
+  description?:string
   price:number;
-  picture_url:string
+  picture_url:string,
 };
 
 type CartStore = {
@@ -17,7 +17,7 @@ type CartStore = {
   discountedTotal: number | null;
   totalValue: number;
   addToCart: (item: Item) => void;
-  removeFromCart: (id: string) => void;
+  removeFromCart: (id: number) => void;
   applyDiscount: (code: string) => Promise<void>;
 };
 
@@ -71,7 +71,7 @@ export const useCartStore = create<CartStore>()(
 
       removeFromCart: (id) =>
         set((state) => {
-          const updatedCart = state.cart.filter((item) => item.id !== id);
+          const updatedCart = state.cart.filter((item) => item.id !== Number(id));
           return {
             cart: updatedCart,
             totalValue: updatedCart.reduce((acc, item) => acc + item.price, 0),

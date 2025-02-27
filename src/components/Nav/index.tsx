@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useCartStore } from "@/store/cartStore";
-import Cart from "../Cart";
+import Cart from "../checkout";
 import { useState } from "react";
-import { useSession } from "next-auth/react";
 import Perfil from "../Perfil";
 import { Signin } from "../Forms/Signin";
 import { links } from "@/utils/Mock/menu";
+import { useSession } from "next-auth/react";
 
 const Menu = () => {
-  
+   const {data:session,status} = useSession()
   const [showCart, setShowCart] = useState(false);
   
   const cart = useCartStore((state) => state.cart);

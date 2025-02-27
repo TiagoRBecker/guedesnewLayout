@@ -1,27 +1,14 @@
 "use client";
-import { products } from "@/utils/Mock/menu";
 import Products from "../Products";
 import { useCartStore } from "@/store/cartStore";
 import { ToastContainer } from "react-toastify";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
 const LastProducts = () => {
   const addToCart = useCartStore((state) => state.addToCart);
   const [data, setData] = useState([]);
 
-  const getProducts = async () => {
-    try {
-      const products = await axios.get(`http://localhost:3001/products/last`);
-      setData(products.data);
-      return;
-    } catch (error) {
-    } finally {
-    }
-  };
-  useEffect(() => {
-    getProducts();
-  }, []);
+
   return (
     <section className="container mx-auto h-full flex flex-col py-36 items-center justify-center">
       {data && data.length > 0 && (

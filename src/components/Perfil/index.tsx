@@ -6,12 +6,10 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Box,
-  useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
 const Perfil = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   return (
     <Menu>
       <MenuButton className=" w-full h-full  relative ">

@@ -9,7 +9,7 @@ export type ProductsType = {
     price:number
     description:string,
     picture_url:string,
-    status:string
+    status?:string
 
   }
   category?:string

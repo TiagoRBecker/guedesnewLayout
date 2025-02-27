@@ -1,47 +1,14 @@
 "use client";
-import axios from "axios";
-import { useEffect, useState } from "react";
+
+import {  useState } from "react";
 
 const Libary = () => {
   const [library, setLibrary] = useState([]);
   const [loading, setLoading] = useState(false);
-  const getLibrary = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3000/users/cm3offco10000ui9lao2e5rav`
-      );
+ 
 
-      setLibrary(response.data.LibraryItem);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    getLibrary();
-  }, []);
   const [progress, setProgress] = useState(0);
-  const handleDownload = async () => {
-   
 
-    try {
-      const response = await axios.get("", {
-        responseType: "blob", 
-        onDownloadProgress: (progressEvent) => {
-          const total = progressEvent.total || 1; 
-          const percentCompleted = Math.round(
-            (progressEvent.loaded * 100) / total
-          );
-          setProgress(percentCompleted);
-        },
-      });
-      return 
-    } catch (error) {
-      console.error("Erro durante o download", error);
-    } finally {
-      setLoading(false);
-    }
-  };
   if (loading) {
     return <p>Download em andamento aguarde {progress} %</p>;
   }
@@ -66,7 +33,7 @@ const Libary = () => {
             </div>
             <div className="flex items-center justify-center  ">
               <button
-                onClick={handleDownload}
+                
                 className="w-full bg-[#336DFF] h-10 text-white flex items-center gap-2 justify-center   text-base"
               >
                 Baixar Documento

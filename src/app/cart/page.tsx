@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const CartPage = () => {
   const [ code , setCode]= useState("")
- const {totalValue,discountedTotal,cart,removeFromCart, applyDiscount} = useCartStore()
+ const {totalValue,cart,removeFromCart, applyDiscount} = useCartStore()
 
 
  useEffect(()=>{},[code])
@@ -40,7 +40,7 @@ const CartPage = () => {
                     currency: "BRL",
                   })}
                 </span>
-                <p className="cursor-pointer" onClick={() => removeFromCart(item.id)}>
+                <p className="cursor-pointer" onClick={() => removeFromCart(Number(item.id))}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -119,21 +119,3 @@ const CartPage = () => {
 };
 
 export default CartPage;
-/*  <div className="flex flex-col w-full ">
-           <div className="flex w-full items-center justify-between border-b-[1px] border-gray-200">
-            <p>Cupom</p>
-            <p>Cupom Name 35%</p>
-           </div>
-           <div className="flex w-full items-center justify-between border-b-[1px] border-gray-200">
-            
-            <span className=" font-bold uppercase">Total</span>
-           
-              <p className="font-bold text-xl">
-                {discountedTotal?.toLocaleString("pt-br", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-              </p>
-            
-          </div>
-          </div>*/ 

@@ -1,25 +1,15 @@
-"use client"
+"use client";
 import Banner from "@/components/Banner";
 import DocsEmphasis from "@/components/Docs";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import LastProducts from "@/components/LastProducts/indext";
-import Products from "@/components/Products";
 import Testimonials from "@/components/Testimonials";
 
-import { products } from "@/utils/Mock/menu";
-
-
-
-
 export default function Home() {
- 
   return (
     <main>
-
       <Banner />
-      <LastProducts/>
-  
+      <LastProducts />
+
       <section className="w-full h-[431px] bg-[#336DFF]">
         <div className="w-full h-full grid grid-cols-2">
           <div className=" ">
@@ -71,8 +61,6 @@ export default function Home() {
         </div>
       </section>
       <Testimonials />
-
-      
     </main>
   );
 }
